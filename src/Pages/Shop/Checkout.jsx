@@ -146,18 +146,17 @@ const Checkout = () => {
 
   const addressParts = user?.deliveryAddress?.split(", ") || [];
 
-const initialValues = {
-  name: user?.name || "",
-  email: user?.email || "",
-  address: addressParts[0] || "",
-  city: addressParts[1] || "",
-  postalCode: addressParts[2] || "",
-  country: addressParts[3] || "",
-  phone: user?.phoneNumber || "",
-  shippingMethod: "standard",
-  paymentMethod: "stripe",
-};
-
+  const initialValues = {
+    name: user?.name || "",
+    email: user?.email || "",
+    address: addressParts[0] || "",
+    city: addressParts[1] || "",
+    postalCode: addressParts[2] || "",
+    country: addressParts[3] || "",
+    phone: user?.phoneNumber || "",
+    shippingMethod: "standard",
+    paymentMethod: "stripe",
+  };
 
   const discount = isNewUser ? totalPrice * 0.2 : 0;
   const grandTotal = totalPrice - discount + shippingCost;
@@ -335,10 +334,16 @@ const initialValues = {
               />
               <div>
                 <p className="font-medium">{item.name}</p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-600">
                   Qty: {item.quantity} | Size: {item.size} | Color:{" "}
                   {getColorName(item.color)}
+                  <span
+                    className="inline-block w-4 h-4 ml-1 rounded-full border align-middle"
+                    style={{ backgroundColor: item.color }}
+                    title={getColorName(item.color)}
+                  ></span>
                 </p>
+
                 <p className="text-sm font-semibold">
                   €{(item.quantity * item.price).toFixed(2)}
                 </p>

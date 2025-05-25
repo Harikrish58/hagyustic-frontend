@@ -35,17 +35,24 @@ const Footer = () => {
             { path: "/products?mainCategory=MEN", label: "Men" },
             { path: "/products?mainCategory=WOMEN", label: "Women" },
             { path: "/products?mainCategory=CHILD", label: "Child" },
-            { path: "/products?mainCategory=ACCESSORIES", label: "Accessories" },
+            {
+              path: "/products?mainCategory=ACCESSORIES",
+              label: "Accessories",
+            },
           ])}
 
           <div>
             <h3 className="font-semibold mb-3">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/privacy" className="hover:text-purple-600">Privacy Policy</Link>
+                <Link to="/privacy" className="hover:text-purple-600">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-purple-600">Terms of Service</Link>
+                <Link to="/terms" className="hover:text-purple-600">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
@@ -56,7 +63,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-2">Developer</h3>
             <p className="text-sm mb-3">Designed & built by:</p>
-            <p className="font-medium text-gray-800 mb-4">Hari Krishnan Nagarajan</p>
+            <p className="font-medium text-gray-800 mb-4">
+              Hari Krishnan Nagarajan
+            </p>
 
             <div className="flex items-center gap-4 text-sm">
               <a
@@ -76,8 +85,9 @@ const Footer = () => {
                 <Github size={18} /> GitHub
               </a>
               <a
-                href="/Hari_Krishnan_Resume.pdf"
-                download
+                href="/HARI_KRISHNAN_NAGARAJAN_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-purple-600"
               >
                 <FileDown size={18} /> Resume

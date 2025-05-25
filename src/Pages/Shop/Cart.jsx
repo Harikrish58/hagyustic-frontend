@@ -10,6 +10,17 @@ import { addToWishlist } from "../../Redux/Slice/WishlistSlice";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import namer from "color-namer";
+
+// Convert hex to color name
+const getColorName = (hex) => {
+  try {
+    return namer(hex).ntc[0].name;
+  } catch {
+    return hex;
+  }
+};
+
 // Cart Component
 // Allows users to adjust quantity, remove items, save to wishlist, or proceed to checkout
 const Cart = () => {
@@ -83,10 +94,11 @@ const Cart = () => {
       <div className="flex-1">
         <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
         <p className="text-sm text-gray-600">
-          Size: {item.size}, Color:
+          Size: {item.size} | Color: {getColorName(item.color)}
           <span
             className="inline-block w-4 h-4 ml-1 rounded-full border align-middle"
             style={{ backgroundColor: item.color }}
+            title={getColorName(item.color)}
           ></span>
         </p>
         <p className="text-indigo-600 font-medium mt-1">

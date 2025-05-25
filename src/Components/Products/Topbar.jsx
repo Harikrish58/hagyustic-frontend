@@ -38,7 +38,7 @@ const Topbar = ({
     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4 mt-2">
       {/* Product count display */}
       <p className="text-sm text-gray-600">
-        Showing 1–12 of {productCount} products
+        Showing 1–{productCount} of {productCount} products
       </p>
 
       {/* Sort and view controls */}
