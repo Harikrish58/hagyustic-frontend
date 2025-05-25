@@ -53,77 +53,93 @@ const AllRoutes = () => {
       {renderRoute("/products", <Collection />)}
       {renderRoute("/search", <SearchResults />)}
       {renderRoute("/product/:id", <ProductDetail />)}
-      {renderRoute("/cart", <Cart />)}
-      
-      {renderRoute("/wishlist", (
+      {renderRoute(
+        "/cart",
+        <PrivateRoute>
+          <Cart />
+        </PrivateRoute>
+      )}
+
+      {renderRoute(
+        "/wishlist",
         <PrivateRoute>
           <Wishlist />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/checkout", (
+      {renderRoute(
+        "/checkout",
         <PrivateRoute>
           <Checkout />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/order-confirmation", (
+      {renderRoute(
+        "/order-confirmation",
         <PrivateRoute>
           <OrderConfirmation />
         </PrivateRoute>
-      ))}
+      )}
 
       {renderRoute("/signin", <SignInSignUp />)}
       {renderRoute("/password-reset", <PasswordReset />)}
       {renderRoute("/password-reset/:token", <PasswordReset />)}
 
-      {renderRoute("/orders", (
+      {renderRoute(
+        "/orders",
         <PrivateRoute>
           <MyOrders />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/orders/:id", (
+      {renderRoute(
+        "/orders/:id",
         <PrivateRoute>
           <OrderDetails />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/profile", (
+      {renderRoute(
+        "/profile",
         <PrivateRoute>
           <MyDetails />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/admin/product/create", (
+      {renderRoute(
+        "/admin/product/create",
         <PrivateRoute adminOnly>
           <AdminProductCreate />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/admin/product/edit/:id", (
+      {renderRoute(
+        "/admin/product/edit/:id",
         <PrivateRoute adminOnly>
           <AdminProductEdit />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/admin/dashboard", (
+      {renderRoute(
+        "/admin/dashboard",
         <PrivateRoute adminOnly>
           <AdminDashboard />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/admin/carousel/create", (
+      {renderRoute(
+        "/admin/carousel/create",
         <PrivateRoute adminOnly>
           <AdminCarouselCreate />
         </PrivateRoute>
-      ))}
+      )}
 
-      {renderRoute("/admin/carousel/edit/:id", (
+      {renderRoute(
+        "/admin/carousel/edit/:id",
         <PrivateRoute adminOnly>
           <AdminCarouselEdit />
         </PrivateRoute>
-      ))}
+      )}
 
       {renderRoute("/about", <About />)}
       {renderRoute("/contact", <Contact />)}
@@ -133,7 +149,14 @@ const AllRoutes = () => {
       {renderRoute("/notfound", <NotFound />)}
 
       {/* Catch-all route for unmatched URLs */}
-      <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
+      <Route
+        path="*"
+        element={
+          <MainLayout>
+            <NotFound />
+          </MainLayout>
+        }
+      />
     </Routes>
   );
 };
