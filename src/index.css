@@ -44,7 +44,7 @@ body {
   /* Logo font styling with gradient and tight kerning */
   .logo-font {
     font-family: "Playfair Display", serif;
-    letter-spacing: -0.3em; /* Tight kerning for Zara-like overlapping effect */
+    letter-spacing: -0.3em;
     background: linear-gradient(
       90deg,
       #cc574e,
