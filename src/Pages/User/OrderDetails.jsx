@@ -3,6 +3,16 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import namer from "color-namer";
+
+// Convert hex to color name
+const getColorName = (hex) => {
+  try {
+    return namer(hex).ntc[0].name;
+  } catch {
+    return hex;
+  }
+};
 
 // OrderDetails Component
 // Displays full order details for the authenticated user, including product list and shipping info.
@@ -132,13 +142,15 @@ const OrderDetails = () => {
                   <h3 className="text-lg font-semibold text-gray-800">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
-                    Quantity: {item.quantity} | Size: {item.size} | Color:{" "}
-                    <span
-                      className="inline-block w-4 h-4 rounded-full border ml-1 align-middle"
-                      style={{ backgroundColor: item.color }}
-                    ></span>
-                  </p>
+                   <p className="text-sm text-gray-600">
+                  Qty: {item.quantity} | Size: {item.size} | Color:{" "}
+                  {getColorName(item.color)}
+                  <span
+                    className="inline-block w-4 h-4 ml-1 rounded-full border align-middle"
+                    style={{ backgroundColor: item.color }}
+                    title={getColorName(item.color)}
+                  ></span>
+                </p>
                   <p className="text-indigo-600 font-medium">
                     €{(item.price * item.quantity).toFixed(2)}
                   </p>
