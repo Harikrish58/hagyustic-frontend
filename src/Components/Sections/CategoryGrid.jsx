@@ -33,12 +33,17 @@ const CategoryGrid = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 py-10 text-center text-gray-600">
-        Loading categories...
-      </div>
-    );
-  }
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-10 text-center text-gray-600">
+      <p className="text-lg font-medium">Loading categories...</p>
+
+      <p className="text-sm text-gray-500 mt-2">
+        Note: The backend runs on a free hosting tier and may take up to
+        30–50 seconds to wake up after inactivity.
+      </p>
+    </div>
+  );
+}
 
   if (error) {
     return (

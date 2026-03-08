@@ -111,10 +111,17 @@ const FeaturedProducts = () => {
   );
 
   if (loading) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 py-14 text-center">Loading...</div>
-    );
-  }
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-14 text-center">
+      <p className="text-lg font-medium">Loading...</p>
+
+      <p className="text-sm text-gray-500 mt-2">
+        Note: The backend is hosted on Render free tier and may take up to
+        30–50 seconds to wake up after inactivity.
+      </p>
+    </div>
+  );
+}
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-14">

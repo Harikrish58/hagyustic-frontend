@@ -70,8 +70,16 @@ const ProductGrid = () => {
   };
 
   if (loading) {
-    return <div className="w-full py-12 text-center">Loading...</div>;
-  }
+  return (
+    <div className="w-full py-12 text-center">
+      <p className="text-lg">Loading...</p>
+      <p className="text-sm text-gray-500 mt-2">
+        Note: The backend runs on a free hosting tier and may take up to
+        30–50 seconds to wake up after inactivity.
+      </p>
+    </div>
+  );
+}
 
   return (
     <div className="w-full py-12 bg-gradient-to-b from-yellow-100 to-yellow-50">
