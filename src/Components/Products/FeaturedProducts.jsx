@@ -116,7 +116,7 @@ const FeaturedProducts = () => {
       <p className="text-lg font-medium">Loading...</p>
 
       <p className="text-sm text-gray-500 mt-2">
-        Note: The backend is hosted on Render free tier and may take up to
+        Note: The backend runs on a free hosting tier and may take up to
         30–50 seconds to wake up after inactivity.
       </p>
     </div>

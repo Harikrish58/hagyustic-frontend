@@ -69,7 +69,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-4 text-sm">
               <a
-                href="https://www.linkedin.com/in/hari-krishnan-283360138/"
+                href="https://www.linkedin.com/in/hari-krishnan-nagarajan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-purple-600"
@@ -85,9 +85,11 @@ const Footer = () => {
                 <Github size={18} /> GitHub
               </a>
               <a
-                href="/HARI_KRISHNAN_NAGARAJAN_CV.pdf"
+                href="/Hari_Krishnan_Nagarajan_Full_Stack_Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Download Resume"
+                download
                 className="flex items-center gap-1 hover:text-purple-600"
               >
                 <FileDown size={18} /> Resume
